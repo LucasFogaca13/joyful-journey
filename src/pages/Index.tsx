@@ -1,16 +1,31 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Navbar from "@/components/Navbar";
+import SectionInicio from "@/components/SectionInicio";
+import SectionMusica from "@/components/SectionMusica";
+import SectionTimeline from "@/components/SectionTimeline";
+import SectionGaleria from "@/components/SectionGaleria";
+import SectionCarta from "@/components/SectionCarta";
+import { Heart } from "lucide-react";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen bg-background overflow-x-hidden">
+      <Navbar />
+      <SectionInicio />
+      <SectionMusica />
+      <SectionTimeline />
+      <SectionGaleria />
+      <SectionCarta />
+
+      {/* Footer */}
+      <footer className="py-8 text-center border-t border-border">
+        <div className="flex items-center justify-center gap-1.5 text-sm text-muted-foreground">
+          <span>Feito com</span>
+          <Heart className="w-3.5 h-3.5 text-primary fill-primary" />
+          <span>para nós</span>
+        </div>
+      </footer>
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
