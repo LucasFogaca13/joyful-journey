@@ -30,7 +30,7 @@ const SectionInicio = () => {
       <div className="relative z-10 text-center space-y-8 animate-[fadeUp_1s_ease-out]">
         <div className="flex items-center justify-center gap-2 sm:gap-3 md:gap-4 flex-wrap">
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-foreground tracking-tight">
-            Laís
+            Lais
           </h1>
           <Heart
             className="w-6 h-6 sm:w-8 sm:h-8 md:w-12 md:h-12 text-primary fill-primary animate-[heartbeat_1.2s_ease-in-out_infinite]"

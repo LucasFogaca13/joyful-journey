@@ -5,8 +5,8 @@ import { Heart, Calendar } from "lucide-react";
 const START_DATE = new Date("2023-08-25T00:00:00");
 
 const milestones = [
+  { date: "4 de Agosto, 2023", text: "Conheceu meus pais." },
   { date: "31 de Dezembro, 2023", text: "Primeiro Ano Novo juntos!" },
-  { date: "4 de Agosto, 2024", text: "Conheceu meus pais." },
   { date: "1 de Fevereiro, 2025", text: "Nossa primeira viagem juntos." },
   { date: "24 de Agosto, 2025", text: "Seu primeiro buquê." },
 ];
