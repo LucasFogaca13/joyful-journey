@@ -33,7 +33,7 @@ const SectionMusica = () => {
             frameBorder="0"
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             loading="lazy"
-            className="rounded-t-2xl"
+            className="rounded-t-2xl w-full min-h-[280px] sm:min-h-[352px]"
             title="Litrão - Matheus & Kauan"
           />
 
