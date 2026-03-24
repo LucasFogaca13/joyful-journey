@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Heart } from "lucide-react";
+import { Heart, Moon, Sun } from "lucide-react";
 
 const navItems = [
   { id: "inicio", label: "Início" },
