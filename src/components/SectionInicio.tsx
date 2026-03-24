@@ -30,13 +30,13 @@ const SectionInicio = () => {
       <div className="relative z-10 text-center space-y-8 animate-[fadeUp_1s_ease-out]">
         <div className="flex items-center justify-center gap-3 md:gap-4">
           <h1 className="text-4xl md:text-6xl font-bold text-foreground tracking-tight">
-            Matheus
+            Laís
           </h1>
           <Heart
             className="w-8 h-8 md:w-12 md:h-12 text-primary fill-primary animate-[heartbeat_1.2s_ease-in-out_infinite]"
           />
           <h1 className="text-4xl md:text-6xl font-bold text-foreground tracking-tight">
-            Amor
+            Lucas
           </h1>
         </div>
 

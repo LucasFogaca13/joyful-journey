@@ -34,14 +34,14 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
-        <button onClick={() => scrollTo("inicio")} className="flex items-center gap-1.5 group">
+      <div className="max-w-5xl mx-auto px-4 py-3 flex items-center">
+        <button onClick={() => scrollTo("inicio")} className="flex items-center gap-1.5 group shrink-0">
           <Heart className="w-5 h-5 text-primary fill-primary transition-transform group-hover:scale-110" />
           <span className="font-semibold text-sm text-foreground tracking-wide">Nós</span>
         </button>
 
         {/* Desktop */}
-        <ul className="hidden md:flex items-center gap-1">
+        <ul className="hidden md:flex items-center gap-1 mx-auto">
           {navItems.map((item) => (
             <li key={item.id}>
               <button
@@ -57,6 +57,8 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
+        {/* Spacer to balance the logo on desktop */}
+        <div className="hidden md:block w-[52px] shrink-0" />
 
         {/* Mobile toggle */}
         <button

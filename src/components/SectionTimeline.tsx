@@ -2,13 +2,13 @@ import { useState, useEffect, useRef } from "react";
 import { Heart, Calendar } from "lucide-react";
 
 // Data do início do relacionamento — ajuste aqui!
-const START_DATE = new Date("2024-01-15T00:00:00");
+const START_DATE = new Date("2023-08-25T00:00:00");
 
 const milestones = [
-  { date: "15 de Janeiro, 2024", text: "O dia em que tudo começou. Nosso primeiro olhar." },
-  { date: "14 de Fevereiro, 2024", text: "Nosso primeiro Dia dos Namorados juntos." },
-  { date: "15 de Julho, 2024", text: "6 meses de puro amor e cumplicidade." },
-  { date: "15 de Janeiro, 2025", text: "1 ano juntos. Cada dia mais apaixonados." },
+  { date: "31 de Dezembro, 2023", text: "Primeiro Ano Novo juntos!" },
+  { date: "4 de Agosto, 2024", text: "Conheceu meus pais." },
+  { date: "1 de Fevereiro, 2025", text: "Nossa primeira viagem juntos." },
+  { date: "24 de Agosto, 2025", text: "Seu primeiro buquê." },
 ];
 
 const SectionTimeline = () => {
