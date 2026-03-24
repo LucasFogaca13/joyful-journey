@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { ImageIcon } from "lucide-react";
 import primeiroEncontro from "@/assets/primeiro-encontro.jpeg";
+import praia from "@/assets/praia.jpeg";
 
 const categories = ["Todos", "Momentos", "Família", "Viagens"];
 
