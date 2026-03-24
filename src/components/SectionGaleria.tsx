@@ -10,7 +10,7 @@ const photos = [
   { id: 2, category: "Momentos", label: "Cinema juntos", src: null },
   { id: 3, category: "Família", label: "Natal em família", src: null },
   { id: 4, category: "Família", label: "Almoço de domingo", src: null },
-  { id: 5, category: "Viagens", label: "Praia", src: null },
+  { id: 5, category: "Viagens", label: "Praia", src: praia },
   { id: 6, category: "Viagens", label: "Montanha", src: null },
   { id: 7, category: "Momentos", label: "Piquenique", src: null },
   { id: 8, category: "Viagens", label: "Cachoeira", src: null },
