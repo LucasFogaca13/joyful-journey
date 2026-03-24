@@ -73,6 +73,14 @@ const Navbar = () => {
         </button>
 
         {/* Mobile toggle */}
+        <div className="md:hidden flex items-center gap-2 ml-auto">
+          <button
+            onClick={toggleTheme}
+            className="flex items-center justify-center w-9 h-9 rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/70 transition-colors"
+            aria-label="Alternar tema"
+          >
+            {dark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+          </button>
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden flex flex-col gap-1 p-2"
