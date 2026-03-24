@@ -39,8 +39,8 @@ const SectionMusica = () => {
           {/* Song info */}
           <div className="p-6 space-y-4 text-center">
             <div>
-              <h3 className="text-xl font-bold text-foreground">Nossa Música</h3>
-              <p className="text-sm text-muted-foreground mt-1">Artista • Álbum</p>
+              <h3 className="text-xl font-bold text-foreground">Litrão</h3>
+              <p className="text-sm text-muted-foreground mt-1">Matheus & Kauan</p>
             </div>
 
             {/* Progress bar */}
