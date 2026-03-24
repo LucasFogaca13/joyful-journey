@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Heart } from "lucide-react";
+import { Heart, Moon, Sun } from "lucide-react";
 
 const navItems = [
   { id: "inicio", label: "Início" },
@@ -13,7 +13,13 @@ const Navbar = () => {
   const [active, setActive] = useState("inicio");
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [dark, setDark] = useState(() => document.documentElement.classList.contains("dark"));
 
+  const toggleTheme = () => {
+    const next = !dark;
+    setDark(next);
+    document.documentElement.classList.toggle("dark", next);
+  };
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll);
@@ -57,19 +63,34 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        {/* Spacer to balance the logo on desktop */}
-        <div className="hidden md:block w-[52px] shrink-0" />
+        {/* Theme toggle */}
+        <button
+          onClick={toggleTheme}
+          className="hidden md:flex items-center justify-center w-9 h-9 rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/70 transition-colors shrink-0"
+          aria-label="Alternar tema"
+        >
+          {dark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+        </button>
 
         {/* Mobile toggle */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden flex flex-col gap-1 p-2"
-          aria-label="Menu"
-        >
-          <span className={`block w-5 h-0.5 bg-foreground transition-transform duration-300 ${menuOpen ? "rotate-45 translate-y-1.5" : ""}`} />
-          <span className={`block w-5 h-0.5 bg-foreground transition-opacity duration-300 ${menuOpen ? "opacity-0" : ""}`} />
-          <span className={`block w-5 h-0.5 bg-foreground transition-transform duration-300 ${menuOpen ? "-rotate-45 -translate-y-1.5" : ""}`} />
-        </button>
+        <div className="md:hidden flex items-center gap-2 ml-auto">
+          <button
+            onClick={toggleTheme}
+            className="flex items-center justify-center w-9 h-9 rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/70 transition-colors"
+            aria-label="Alternar tema"
+          >
+            {dark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+          </button>
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="flex flex-col gap-1 p-2"
+            aria-label="Menu"
+          >
+            <span className={`block w-5 h-0.5 bg-foreground transition-transform duration-300 ${menuOpen ? "rotate-45 translate-y-1.5" : ""}`} />
+            <span className={`block w-5 h-0.5 bg-foreground transition-opacity duration-300 ${menuOpen ? "opacity-0" : ""}`} />
+            <span className={`block w-5 h-0.5 bg-foreground transition-transform duration-300 ${menuOpen ? "-rotate-45 -translate-y-1.5" : ""}`} />
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
