@@ -74,10 +74,14 @@ const SectionGaleria = () => {
               }`}
               style={{ transitionDelay: `${300 + i * 80}ms` }}
             >
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-muted-foreground/50 gap-2">
-                <ImageIcon className="w-8 h-8" />
-                <span className="text-[10px] font-medium">{photo.label}</span>
-              </div>
+              {photo.src ? (
+                <img src={photo.src} alt={photo.label} className="absolute inset-0 w-full h-full object-cover" />
+              ) : (
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-muted-foreground/50 gap-2">
+                  <ImageIcon className="w-8 h-8" />
+                  <span className="text-[10px] font-medium">{photo.label}</span>
+                </div>
+              )}
               <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/20 transition-colors duration-300 flex items-end p-3">
                 <span className="text-primary-foreground text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-md">
                   {photo.label}
