@@ -1,18 +1,18 @@
 import { useState, useRef, useEffect } from "react";
 import { ImageIcon } from "lucide-react";
+import primeiroEncontro from "@/assets/primeiro-encontro.jpeg";
 
 const categories = ["Todos", "Momentos", "Família", "Viagens"];
 
-// Placeholder photos — substituir por fotos reais
 const photos = [
-  { id: 1, category: "Momentos", label: "Nosso primeiro encontro" },
-  { id: 2, category: "Momentos", label: "Cinema juntos" },
-  { id: 3, category: "Família", label: "Natal em família" },
-  { id: 4, category: "Família", label: "Almoço de domingo" },
-  { id: 5, category: "Viagens", label: "Praia" },
-  { id: 6, category: "Viagens", label: "Montanha" },
-  { id: 7, category: "Momentos", label: "Piquenique" },
-  { id: 8, category: "Viagens", label: "Cachoeira" },
+  { id: 1, category: "Momentos", label: "Nosso primeiro encontro", src: primeiroEncontro },
+  { id: 2, category: "Momentos", label: "Cinema juntos", src: null },
+  { id: 3, category: "Família", label: "Natal em família", src: null },
+  { id: 4, category: "Família", label: "Almoço de domingo", src: null },
+  { id: 5, category: "Viagens", label: "Praia", src: null },
+  { id: 6, category: "Viagens", label: "Montanha", src: null },
+  { id: 7, category: "Momentos", label: "Piquenique", src: null },
+  { id: 8, category: "Viagens", label: "Cachoeira", src: null },
 ];
 
 const SectionGaleria = () => {
