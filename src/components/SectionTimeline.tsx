@@ -86,30 +86,35 @@ const SectionTimeline = () => {
         <div className="relative">
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
           <div className="space-y-10">
-            {milestones.map((m, i) => (
-              <div
-                key={i}
-                className={`relative flex items-start gap-6 transition-all duration-600 ${
-                  visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-                } ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
-                style={{ transitionDelay: `${400 + i * 150}ms` }}
-              >
-                {/* Dot */}
-                <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-primary rounded-full -translate-x-1.5 mt-1.5 shadow-md z-10" />
+            {milestones.map((m, i) => {
+              const isLeft = i % 2 === 0;
+              return (
+                <div
+                  key={i}
+                  className={`relative transition-all duration-600 ${
+                    visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+                  }`}
+                  style={{ transitionDelay: `${400 + i * 150}ms` }}
+                >
+                  {/* Dot */}
+                  <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-primary rounded-full -translate-x-1.5 mt-5 shadow-md z-10" />
 
-                {/* Card */}
-                <div className={`ml-10 md:ml-0 md:w-[calc(50%-24px)] ${i % 2 === 0 ? "" : "md:mr-auto"}`}>
-                  <div className="bg-card rounded-xl p-5 shadow-[0_4px_24px_hsl(340,20%,88%,0.35)] hover:shadow-[0_6px_30px_hsl(340,20%,88%,0.5)] transition-shadow duration-300">
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
-                      <Calendar className="w-3.5 h-3.5" />
-                      <span className="font-medium">{m.date}</span>
+                  {/* Card - mobile always right, desktop alternates */}
+                  <div className={`ml-10 md:ml-0 md:flex ${isLeft ? "md:justify-start" : "md:justify-end"}`}>
+                    <div className={`md:w-[calc(50%-28px)] ${isLeft ? "md:mr-auto md:pr-0" : "md:ml-auto md:pl-0"}`}>
+                      <div className={`bg-card rounded-xl p-5 shadow-[0_4px_24px_hsl(340,20%,88%,0.35)] hover:shadow-[0_6px_30px_hsl(340,20%,88%,0.5)] transition-shadow duration-300 ${isLeft ? "md:text-right" : "md:text-left"}`}>
+                        <div className={`flex items-center gap-2 text-xs text-muted-foreground mb-2 ${isLeft ? "md:justify-end" : ""}`}>
+                          <Calendar className="w-3.5 h-3.5" />
+                          <span className="font-medium">{m.date}</span>
+                        </div>
+                        <p className="text-sm text-foreground leading-relaxed">{m.text}</p>
+                        <Heart className={`w-3.5 h-3.5 text-primary/30 fill-primary/20 mt-3 ${isLeft ? "md:ml-auto" : ""}`} />
+                      </div>
                     </div>
-                    <p className="text-sm text-foreground leading-relaxed">{m.text}</p>
-                    <Heart className="w-3.5 h-3.5 text-primary/30 fill-primary/20 mt-3" />
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
