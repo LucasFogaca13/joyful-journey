@@ -81,15 +81,16 @@ const Navbar = () => {
           >
             {dark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
           </button>
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden flex flex-col gap-1 p-2"
-          aria-label="Menu"
-        >
-          <span className={`block w-5 h-0.5 bg-foreground transition-transform duration-300 ${menuOpen ? "rotate-45 translate-y-1.5" : ""}`} />
-          <span className={`block w-5 h-0.5 bg-foreground transition-opacity duration-300 ${menuOpen ? "opacity-0" : ""}`} />
-          <span className={`block w-5 h-0.5 bg-foreground transition-transform duration-300 ${menuOpen ? "-rotate-45 -translate-y-1.5" : ""}`} />
-        </button>
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="flex flex-col gap-1 p-2"
+            aria-label="Menu"
+          >
+            <span className={`block w-5 h-0.5 bg-foreground transition-transform duration-300 ${menuOpen ? "rotate-45 translate-y-1.5" : ""}`} />
+            <span className={`block w-5 h-0.5 bg-foreground transition-opacity duration-300 ${menuOpen ? "opacity-0" : ""}`} />
+            <span className={`block w-5 h-0.5 bg-foreground transition-transform duration-300 ${menuOpen ? "-rotate-45 -translate-y-1.5" : ""}`} />
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
@@ -104,7 +105,7 @@ const Navbar = () => {
               }`}
             >
               {item.label}
-        </div>
+            </button>
           ))}
         </div>
       )}
