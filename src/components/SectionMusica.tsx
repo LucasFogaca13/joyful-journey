@@ -27,7 +27,7 @@ const SectionMusica = () => {
         <div className="bg-card rounded-2xl shadow-[0_8px_40px_hsl(340,20%,88%,0.5)] overflow-hidden">
           {/* Spotify Embed */}
           <iframe
-            src="https://open.spotify.com/embed/track/4h9wh7iOZ0GGn8QVp4RAOB?utm_source=generator&theme=0"
+            src="https://open.spotify.com/embed/track/3mBP4pnUfrvWNaYE6dJhFq?utm_source=generator&theme=0"
             width="100%"
             height="352"
             frameBorder="0"
