@@ -1,8 +1,6 @@
-import { useState, useRef, useEffect } from "react";
-import { Play, Pause, Music } from "lucide-react";
+import { useRef, useEffect, useState } from "react";
 
 const SectionMusica = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
   const [visible, setVisible] = useState(false);
   const ref = useRef<HTMLElement>(null);
 
@@ -27,49 +25,21 @@ const SectionMusica = () => {
         }`}
       >
         <div className="bg-card rounded-2xl shadow-[0_8px_40px_hsl(340,20%,88%,0.5)] overflow-hidden">
-          {/* Album cover */}
-          <div className="relative aspect-square bg-gradient-to-br from-primary/20 via-primary/10 to-accent/10 flex items-center justify-center">
-            <div className="text-center space-y-3">
-              <Music className="w-16 h-16 text-primary/40 mx-auto" />
-              <p className="text-xs text-muted-foreground">Capa do álbum</p>
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
-          </div>
+          {/* Spotify Embed */}
+          <iframe
+            src="https://open.spotify.com/embed/track/4h9wh7iOZ0GGn8QVp4RAOB?utm_source=generator&theme=0"
+            width="100%"
+            height="352"
+            frameBorder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+            className="rounded-t-2xl"
+            title="Litrão - Matheus & Kauan"
+          />
 
-          {/* Song info */}
-          <div className="p-6 space-y-4 text-center">
-            <div>
-              <h3 className="text-xl font-bold text-foreground">Litrão</h3>
-              <p className="text-sm text-muted-foreground mt-1">Matheus & Kauan</p>
-            </div>
-
-            {/* Progress bar */}
-            <div className="space-y-1">
-              <div className="h-1 bg-secondary rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-primary rounded-full transition-all duration-300"
-                  style={{ width: isPlaying ? "45%" : "0%" }}
-                />
-              </div>
-              <div className="flex justify-between text-[10px] text-muted-foreground">
-                <span>{isPlaying ? "1:32" : "0:00"}</span>
-                <span>3:24</span>
-              </div>
-            </div>
-
-            {/* Play button */}
-            <button
-              onClick={() => setIsPlaying(!isPlaying)}
-              className="w-14 h-14 rounded-full bg-primary text-primary-foreground flex items-center justify-center mx-auto shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
-            >
-              {isPlaying ? (
-                <Pause className="w-6 h-6" />
-              ) : (
-                <Play className="w-6 h-6 ml-0.5" />
-              )}
-            </button>
-
-            <p className="text-sm text-muted-foreground italic pt-2 border-t border-border">
+          {/* Caption */}
+          <div className="p-5 text-center border-t border-border">
+            <p className="text-sm text-muted-foreground italic">
               "Essa música que marcou nossa história"
             </p>
           </div>
