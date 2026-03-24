@@ -63,8 +63,14 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        {/* Spacer to balance the logo on desktop */}
-        <div className="hidden md:block w-[52px] shrink-0" />
+        {/* Theme toggle */}
+        <button
+          onClick={toggleTheme}
+          className="hidden md:flex items-center justify-center w-9 h-9 rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/70 transition-colors shrink-0"
+          aria-label="Alternar tema"
+        >
+          {dark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+        </button>
 
         {/* Mobile toggle */}
         <button
