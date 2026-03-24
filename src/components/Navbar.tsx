@@ -104,7 +104,7 @@ const Navbar = () => {
               }`}
             >
               {item.label}
-            </button>
+        </div>
           ))}
         </div>
       )}
