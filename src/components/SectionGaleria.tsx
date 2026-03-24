@@ -1,18 +1,18 @@
 import { useState, useRef, useEffect } from "react";
 import { ImageIcon } from "lucide-react";
+import primeiroEncontro from "@/assets/primeiro-encontro.jpeg";
 
 const categories = ["Todos", "Momentos", "Família", "Viagens"];
 
-// Placeholder photos — substituir por fotos reais
 const photos = [
-  { id: 1, category: "Momentos", label: "Nosso primeiro encontro" },
-  { id: 2, category: "Momentos", label: "Cinema juntos" },
-  { id: 3, category: "Família", label: "Natal em família" },
-  { id: 4, category: "Família", label: "Almoço de domingo" },
-  { id: 5, category: "Viagens", label: "Praia" },
-  { id: 6, category: "Viagens", label: "Montanha" },
-  { id: 7, category: "Momentos", label: "Piquenique" },
-  { id: 8, category: "Viagens", label: "Cachoeira" },
+  { id: 1, category: "Momentos", label: "Nosso primeiro encontro", src: primeiroEncontro },
+  { id: 2, category: "Momentos", label: "Cinema juntos", src: null },
+  { id: 3, category: "Família", label: "Natal em família", src: null },
+  { id: 4, category: "Família", label: "Almoço de domingo", src: null },
+  { id: 5, category: "Viagens", label: "Praia", src: null },
+  { id: 6, category: "Viagens", label: "Montanha", src: null },
+  { id: 7, category: "Momentos", label: "Piquenique", src: null },
+  { id: 8, category: "Viagens", label: "Cachoeira", src: null },
 ];
 
 const SectionGaleria = () => {
@@ -74,10 +74,14 @@ const SectionGaleria = () => {
               }`}
               style={{ transitionDelay: `${300 + i * 80}ms` }}
             >
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-muted-foreground/50 gap-2">
-                <ImageIcon className="w-8 h-8" />
-                <span className="text-[10px] font-medium">{photo.label}</span>
-              </div>
+              {photo.src ? (
+                <img src={photo.src} alt={photo.label} className="absolute inset-0 w-full h-full object-cover" />
+              ) : (
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-muted-foreground/50 gap-2">
+                  <ImageIcon className="w-8 h-8" />
+                  <span className="text-[10px] font-medium">{photo.label}</span>
+                </div>
+              )}
               <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/20 transition-colors duration-300 flex items-end p-3">
                 <span className="text-primary-foreground text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-md">
                   {photo.label}
